@@ -2,13 +2,13 @@
 # Copyright 2016, 2017 Openworx
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl.html).
 
-from odoo import models, fields
+from odoo import models, fields ,_
 
 class ResUsers(models.Model):
 
     _inherit = 'res.users'
 
-    sidebar_visible = fields.Boolean("Show App Sidebar", default=True)
+    sidebar_visible = fields.Boolean(_("Show App Sidebar"_, default=True)
 
     def __init__(self, pool, cr):
         """ Override of __init__ to add access rights on notification_email_send
